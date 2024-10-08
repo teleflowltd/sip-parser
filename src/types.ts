@@ -21,6 +21,7 @@ export interface SipUri {
     user?: string,
     port?: number,
     parameters?: NameValuePair[];
+    secure?: boolean,
 }
 
 export interface Header {
