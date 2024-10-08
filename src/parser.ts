@@ -9,8 +9,8 @@ export function parse(rawMessage: string): SIPMessage {
 
     const requestLineMatches = matchRequestLine(startLine);
     if (requestLineMatches) {
-        if (requestLineMatches[3] !== '2.0')
-            throw new Error('Unsupported SIP version: ' + requestLineMatches[3]);
+        if (requestLineMatches[4] !== '2.0')
+            throw new Error('Unsupported SIP version: ' + requestLineMatches[4]);
 
         return parseRequest(requestLineMatches[1], requestLineMatches[2], headerLines, contentLines);
     }
